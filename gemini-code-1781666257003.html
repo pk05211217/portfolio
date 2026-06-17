@@ -1,0 +1,568 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Illustrator Portfolio</title>
+  <meta name="description" content="插畫家個人作品集網站，展示創作風格、服務內容與聯絡方式。" />
+
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" />
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css" />
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@400;500;700;900&family=Playfair+Display:wght@600;700&display=swap" rel="stylesheet" />
+
+  <link href="https://unpkg.com/aos@2.3.4/dist/aos.css" rel="stylesheet" />
+
+  <style>
+    :root {
+      --bg: #070b1f;
+      --surface: rgba(10, 16, 38, 0.78);
+      --surface-2: #101a44;
+      --text: #eef5ff;
+      --muted: #9db0ff;
+      --primary: #5ce1ff;
+      --primary-dark: #2a7dff;
+      --accent: #b26bff;
+      --accent-2: #ff4fd8;
+      --border: rgba(92, 225, 255, 0.18);
+      --shadow: 0 20px 60px rgba(0, 0, 0, 0.45);
+      --radius: 18px;
+    }
+
+    html { scroll-behavior: smooth; }
+
+    body {
+      position: relative;
+      overflow-x: hidden;
+      background:
+        radial-gradient(circle at top, rgba(92, 225, 255, 0.08), transparent 18%),
+        radial-gradient(circle at 80% 20%, rgba(178, 107, 255, 0.08), transparent 12%),
+        linear-gradient(180deg, #02050f 0%, #0a1030 55%, #050914 100%);
+      color: var(--text);
+      font-family: "Noto Sans TC", sans-serif;
+      line-height: 1.7;
+    }
+
+    body::before,
+    body::after {
+      content: '';
+      position: fixed;
+      inset: 0;
+      pointer-events: none;
+      z-index: 0;
+    }
+
+    body::before {
+      background-image:
+        linear-gradient(rgba(92, 225, 255, 0.03) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(92, 225, 255, 0.03) 1px, transparent 1px);
+      background-size: 32px 32px;
+      opacity: 0.45;
+    }
+
+    body::after {
+      background:
+        radial-gradient(circle at 20% 20%, rgba(92, 225, 255, 0.12), transparent 8%),
+        radial-gradient(circle at 80% 30%, rgba(178, 107, 255, 0.1), transparent 10%),
+        radial-gradient(circle at 50% 80%, rgba(255, 79, 216, 0.08), transparent 12%);
+      animation: pulseGlow 6s ease-in-out infinite alternate;
+    }
+
+    @keyframes pulseGlow {
+      from { opacity: 0.6; transform: scale(1); }
+      to { opacity: 1; transform: scale(1.04); }
+    }
+
+    h1, h2, h3, h4, .display-font {
+      font-family: "Playfair Display", serif;
+      letter-spacing: 0.03em;
+    }
+
+    img { max-width: 100%; display: block; }
+
+    .navbar {
+      background: rgba(2, 6, 22, 0.75);
+      backdrop-filter: blur(10px);
+      border-bottom: 1px solid var(--border);
+      box-shadow: 0 0 30px rgba(92, 225, 255, 0.06);
+    }
+
+    .nav-link {
+      color: var(--text) !important;
+      font-weight: 500;
+      text-shadow: 0 0 8px rgba(92, 225, 255, 0.08);
+    }
+
+    .btn-primary-custom {
+      background: linear-gradient(90deg, var(--primary), var(--accent-2));
+      color: #fff;
+      border: none;
+      border-radius: 999px;
+      padding: 0.8rem 1.4rem;
+      font-weight: 600;
+      box-shadow: 0 0 18px rgba(92, 225, 255, 0.22);
+      transition: transform 0.2s ease, box-shadow 0.2s ease;
+    }
+
+    .btn-primary-custom:hover {
+      color: #fff;
+      transform: translateY(-2px);
+      box-shadow: 0 0 24px rgba(178, 107, 255, 0.38);
+    }
+
+    .btn-outline-custom {
+      border: 1px solid var(--primary);
+      color: var(--text);
+      border-radius: 999px;
+      padding: 0.8rem 1.4rem;
+      font-weight: 600;
+      background: transparent;
+      box-shadow: inset 0 0 15px rgba(92, 225, 255, 0.06);
+    }
+
+    .hero {
+      padding: 8rem 0 5rem;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .hero::before,
+    .hero::after {
+      content: '';
+      position: absolute;
+      width: 320px;
+      height: 320px;
+      background: radial-gradient(circle, rgba(92, 225, 255, 0.18), transparent 70%);
+      z-index: 0;
+      border-radius: 50%;
+      filter: blur(6px);
+    }
+
+    .hero::before { top: 40px; left: -90px; }
+    .hero::after { bottom: -80px; right: -80px; background: radial-gradient(circle, rgba(178, 107, 255, 0.16), transparent 68%); }
+
+    .hero-text { position: relative; z-index: 1; }
+
+    .eyebrow {
+      color: var(--primary);
+      text-transform: uppercase;
+      letter-spacing: 0.3em;
+      font-size: 0.8rem;
+      font-weight: 700;
+      margin-bottom: 1rem;
+      text-shadow: 0 0 10px rgba(92, 225, 255, 0.18);
+    }
+
+    .hero-title {
+      font-size: clamp(3rem, 4.5vw, 5rem);
+      line-height: 1;
+      margin-bottom: 1rem;
+    }
+
+    .hero-image-wrap {
+      position: relative;
+      z-index: 1;
+      background:
+        linear-gradient(180deg, rgba(16, 26, 68, 0.95), rgba(7, 11, 31, 0.92));
+      border-radius: 32px;
+      padding: 1rem;
+      box-shadow:
+        inset 0 0 30px rgba(92, 225, 255, 0.08),
+        0 0 30px rgba(92, 225, 255, 0.12);
+      border: 1px solid var(--border);
+    }
+
+    .hero-image-wrap img {
+      border-radius: 24px;
+      height: 620px;
+      object-fit: cover;
+      width: 100%;
+      filter: saturate(1.1) contrast(1.04);
+    }
+
+    .floating-card {
+      position: absolute;
+      bottom: -24px;
+      left: -24px;
+      background: rgba(5, 9, 20, 0.82);
+      backdrop-filter: blur(8px);
+      padding: 1rem 1.2rem;
+      border-radius: 18px;
+      border: 1px solid rgba(92, 225, 255, 0.18);
+      box-shadow:
+        0 0 18px rgba(92, 225, 255, 0.1),
+        0 20px 40px rgba(0, 0, 0, 0.35);
+      width: 220px;
+    }
+
+    .section-title {
+      font-size: 2.6rem;
+      margin-bottom: 1rem;
+      color: #f7fbff;
+    }
+
+    .section-subtitle { color: var(--muted); max-width: 700px; }
+
+    .about-card,
+    .service-card,
+    .project-card,
+    .contact-card {
+      background: var(--surface);
+      border-radius: var(--radius);
+      border: 1px solid var(--border);
+      box-shadow:
+        inset 0 0 30px rgba(92, 225, 255, 0.03),
+        0 0 25px rgba(92, 225, 255, 0.06);
+    }
+
+    .about-card { padding: 2rem; }
+
+    .service-card { padding: 1.8rem; height: 100%; }
+
+    .service-icon {
+      width: 54px;
+      height: 54px;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      background: linear-gradient(135deg, rgba(92, 225, 255, 0.14), rgba(178, 107, 255, 0.12));
+      color: var(--primary);
+      border-radius: 16px;
+      font-size: 1.4rem;
+      box-shadow: inset 0 0 12px rgba(92, 225, 255, 0.04);
+    }
+
+    .project-card { overflow: hidden; }
+
+    .project-card img {
+      height: 320px;
+      width: 100%;
+      object-fit: cover;
+      transition: transform 0.35s ease;
+    }
+
+    .project-card:hover img { transform: scale(1.06); }
+
+    .tag {
+      display: inline-block;
+      background: rgba(92, 225, 255, 0.08);
+      color: var(--primary);
+      border-radius: 999px;
+      padding: 0.35rem 0.7rem;
+      font-size: 0.78rem;
+      font-weight: 600;
+      margin-right: 0.4rem;
+      margin-bottom: 0.4rem;
+      border: 1px solid rgba(92, 225, 255, 0.12);
+    }
+
+    .timeline-item {
+      position: relative;
+      padding-left: 2rem;
+      margin-bottom: 1.8rem;
+    }
+
+    .timeline-item::before {
+      content: '';
+      position: absolute;
+      left: 0;
+      top: 0.5rem;
+      width: 12px;
+      height: 12px;
+      border-radius: 50%;
+      background: linear-gradient(90deg, var(--primary), var(--accent));
+      box-shadow: 0 0 0 6px rgba(92, 225, 255, 0.08);
+    }
+
+    .timeline-item::after {
+      content: '';
+      position: absolute;
+      left: 5px;
+      top: 1.3rem;
+      width: 2px;
+      height: calc(100% + 0.8rem);
+      background: linear-gradient(180deg, rgba(92, 225, 255, 0.4), rgba(178, 107, 255, 0.15));
+    }
+
+    .contact-card {
+      padding: 2rem;
+      background:
+        linear-gradient(rgba(7, 11, 31, 0.82), rgba(7, 11, 31, 0.82)),
+        url('https://images.unsplash.com/photo-1513360371669-4adf3dd7dff8?auto=format&fit=crop&w=1200&q=80') center/cover;
+      border: 1px solid rgba(92, 225, 255, 0.18);
+    }
+
+    footer {
+      background: linear-gradient(90deg, #02050f, #0b1234 50%, #060d1d);
+      color: #dce8ff;
+      padding: 1.2rem 0;
+      border-top: 1px solid rgba(92, 225, 255, 0.08);
+    }
+
+    @media (max-width: 992px) {
+      .hero { padding-top: 6rem; }
+      .hero-image-wrap img { height: 500px; }
+    }
+
+    @media (max-width: 768px) {
+      .hero-title { font-size: 3rem; }
+      .floating-card {
+        position: static;
+        width: 100%;
+        margin-top: 1rem;
+      }
+      .section-title { font-size: 2rem; }
+    }
+  </style>
+</head>
+<body>
+  <header class="sticky-top">
+    <nav class="navbar navbar-expand-lg">
+      <div class="container">
+        <a class="navbar-brand fw-bold display-font" href="#home">Ari Chen</a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+          <ul class="navbar-nav ms-auto gap-lg-3">
+            <li class="nav-item"><a class="nav-link" href="#about">關於我</a></li>
+            <li class="nav-item"><a class="nav-link" href="#services">服務</a></li>
+            <li class="nav-item"><a class="nav-link" href="#projects">作品</a></li>
+            <li class="nav-item"><a class="nav-link" href="#process">流程</a></li>
+            <li class="nav-item"><a class="nav-link" href="#contact">聯絡</a></li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+  </header>
+
+  <main>
+    <section class="hero" id="home">
+      <div class="container">
+        <div class="row align-items-center g-5">
+          <div class="col-lg-6 hero-text" data-aos="fade-right">
+            <span class="eyebrow">Illustration · Character · Storytelling</span>
+            <h1 class="hero-title">把想像變成有溫度的畫面</h1>
+            <p class="lead text-secondary mb-4">我是一位插畫家，專注於角色設計、品牌視覺與故事插畫，讓每一張作品都能傳達情緒與價值。</p>
+            <div class="d-flex gap-3 flex-wrap">
+              <a href="#projects" class="btn btn-primary-custom">查看作品</a>
+              <a href="#contact" class="btn btn-outline-custom">聯絡我</a>
+            </div>
+            <div class="d-flex gap-4 mt-4 text-secondary small">
+              <div><strong>6+</strong><br />年創作經驗</div>
+              <div><strong>80+</strong><br />完成專案</div>
+              <div><strong>12</strong><br />合作品牌</div>
+            </div>
+          </div>
+          <div class="col-lg-6" data-aos="fade-left">
+            <div class="hero-image-wrap">
+              <img src="https://images.unsplash.com/photo-1513360371669-4adf3dd7dff8?auto=format&fit=crop&w=1200&q=80" alt="插畫作品背景" />
+              <div class="floating-card">
+                <p class="mb-1 small text-muted">近期專案</p>
+                <h5 class="mb-0">Dream Garden 系列</h5>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="py-5" id="about">
+      <div class="container">
+        <div class="row g-4 align-items-center">
+          <div class="col-lg-5" data-aos="fade-up">
+            <img src="https://images.unsplash.com/photo-1524504388940-b1c1722653e1?auto=format&fit=crop&w=900&q=80" alt="插畫家肖像" class="img-fluid rounded-4 shadow" />
+          </div>
+          <div class="col-lg-7" data-aos="fade-up" data-aos-delay="100">
+            <div class="about-card">
+              <span class="eyebrow">About</span>
+              <h2 class="section-title">關於我</h2>
+              <p class="text-secondary mb-3">我相信插畫不只是畫面，更是把概念、情緒與故事完整傳達的語言。從角色設計到品牌插畫，我喜歡用溫暖又有層次的色彩，打造讓人停下來看的作品。</p>
+              <p class="text-secondary mb-4">目前主要合作對象包含品牌、出版、活動與社群內容，希望透過作品幫助品牌與觀眾建立更深層的連結。</p>
+              <div class="d-flex flex-wrap gap-2">
+                <span class="tag">#角色設計</span>
+                <span class="tag">#品牌插畫</span>
+                <span class="tag">#故事敘事</span>
+                <span class="tag">#色彩構圖</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="py-5" id="services">
+      <div class="container">
+        <div class="text-center mb-5" data-aos="fade-up">
+          <span class="eyebrow">Services</span>
+          <h2 class="section-title">我能提供的服務</h2>
+        </div>
+        <div class="row g-4">
+          <div class="col-md-6 col-lg-3" data-aos="fade-up">
+            <div class="service-card text-center">
+              <div class="service-icon mx-auto mb-3"><i class="bi bi-palette2"></i></div>
+              <h4>角色插畫</h4>
+              <p class="text-secondary mb-0">打造獨特角色與世界觀，適合品牌與遊戲內容。</p>
+            </div>
+          </div>
+          <div class="col-md-6 col-lg-3" data-aos="fade-up" data-aos-delay="100">
+            <div class="service-card text-center">
+              <div class="service-icon mx-auto mb-3"><i class="bi bi-brush"></i></div>
+              <h4>品牌視覺</h4>
+              <p class="text-secondary mb-0">提供封面、海報、活動宣傳與社群圖稿設計。</p>
+            </div>
+          </div>
+          <div class="col-md-6 col-lg-3" data-aos="fade-up" data-aos-delay="200">
+            <div class="service-card text-center">
+              <div class="service-icon mx-auto mb-3"><i class="bi bi-image"></i></div>
+              <h4>故事插畫</h4>
+              <p class="text-secondary mb-0">搭配文字內容，將敘事感與情緒完整呈現。</p>
+            </div>
+          </div>
+          <div class="col-md-6 col-lg-3" data-aos="fade-up" data-aos-delay="300">
+            <div class="service-card text-center">
+              <div class="service-icon mx-auto mb-3"><i class="bi bi-chat-dots"></i></div>
+              <h4>創作諮詢</h4>
+              <p class="text-secondary mb-0">協助從概念發想到最終完成，讓作品更有方向感。</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="py-5" id="projects">
+      <div class="container">
+        <div class="d-flex justify-content-between align-items-end mb-4 flex-wrap gap-3" data-aos="fade-up">
+          <div>
+            <span class="eyebrow">Featured Works</span>
+            <h2 class="section-title mb-0">精選作品</h2>
+          </div>
+          <a href="#contact" class="btn btn-outline-custom">我要委託</a>
+        </div>
+        <div class="row g-4">
+          <div class="col-md-6 col-lg-4" data-aos="fade-up">
+            <div class="project-card">
+              <img src="https://images.unsplash.com/photo-1515405295579-ba7b45403062?auto=format&fit=crop&w=900&q=80" alt="作品一" />
+              <div class="p-3">
+                <h5 class="mb-1">Moonlit Forest</h5>
+                <p class="text-secondary small mb-2">品牌故事插畫 · 2024</p>
+                <span class="tag">#自然</span><span class="tag">#夜景</span>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-6 col-lg-4" data-aos="fade-up" data-aos-delay="100">
+            <div class="project-card">
+              <img src="https://images.unsplash.com/photo-1521572267360-ee0c2909d518?auto=format&fit=crop&w=900&q=80" alt="作品二" />
+              <div class="p-3">
+                <h5 class="mb-1">Urban Bloom</h5>
+                <p class="text-secondary small mb-2">城市插畫海報 · 2024</p>
+                <span class="tag">#城市</span><span class="tag">#海報</span>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-6 col-lg-4" data-aos="fade-up" data-aos-delay="200">
+            <div class="project-card">
+              <img src="https://images.unsplash.com/photo-1500530855697-b586d89ba3ee?auto=format&fit=crop&w=900&q=80" alt="作品三" />
+              <div class="p-3">
+                <h5 class="mb-1">The Little Traveler</h5>
+                <p class="text-secondary small mb-2">兒童書插畫 · 2023</p>
+                <span class="tag">#兒童書</span><span class="tag">#角色</span>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-6 col-lg-4" data-aos="fade-up">
+            <div class="project-card">
+              <img src="https://images.unsplash.com/photo-1492691527719-9d1e07e534b4?auto=format&fit=crop&w=900&q=80" alt="作品四" />
+              <div class="p-3">
+                <h5 class="mb-1">Golden Hour</h5>
+                <p class="text-secondary small mb-2">活動主視覺 · 2023</p>
+                <span class="tag">#活動</span><span class="tag">#主視覺</span>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-6 col-lg-4" data-aos="fade-up" data-aos-delay="100">
+            <div class="project-card">
+              <img src="https://images.unsplash.com/photo-1517048676732-d65bc937f952?auto=format&fit=crop&w=900&q=80" alt="作品五" />
+              <div class="p-3">
+                <h5 class="mb-1">Herbal Story</h5>
+                <p class="text-secondary small mb-2">食物品牌插畫 · 2022</p>
+                <span class="tag">#食物</span><span class="tag">#品牌</span>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-6 col-lg-4" data-aos="fade-up" data-aos-delay="200">
+            <div class="project-card">
+              <img src="https://images.unsplash.com/photo-1524995997946-a1c2e315a42f?auto=format&fit=crop&w=900&q=80" alt="作品六" />
+              <div class="p-3">
+                <h5 class="mb-1">Quiet Morning</h5>
+                <p class="text-secondary small mb-2">生活方式插畫 · 2022</p>
+                <span class="tag">#生活</span><span class="tag">#療癒</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="py-5" id="process">
+      <div class="container">
+        <div class="row g-5 align-items-start">
+          <div class="col-lg-5" data-aos="fade-up">
+            <span class="eyebrow">Process</span>
+            <h2 class="section-title">創作流程</h2>
+            <p class="text-secondary">從初步構思到最終交付，我會與客戶一起確認風格、需求與目標，確保每一步都能順利推進。</p>
+          </div>
+          <div class="col-lg-7" data-aos="fade-up" data-aos-delay="100">
+            <div class="timeline-item">
+              <h5>01. 討論與構想</h5>
+              <p class="text-secondary mb-0">確認品牌定位、視覺目標與創作方向。</p>
+            </div>
+            <div class="timeline-item">
+              <h5>02. 草圖與概念</h5>
+              <p class="text-secondary mb-0">進行構圖、角色設定與初步色彩試驗。</p>
+            </div>
+            <div class="timeline-item">
+              <h5>03. 完稿與調整</h5>
+              <p class="text-secondary mb-0">依照需求完成精修，並提供多版本修改建議。</p>
+            </div>
+            <div class="timeline-item">
+              <h5>04. 交付與後續支援</h5>
+              <p class="text-secondary mb-0">提供高解析檔案與後續使用建議，讓作品能長久運用。</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="py-5" id="contact">
+      <div class="container">
+        <div class="contact-card text-center" data-aos="fade-up">
+          <span class="eyebrow">Contact</span>
+          <h2 class="section-title mb-3">讓我們一起創造有故事的畫面</h2>
+          <p class="text-secondary mb-4">如果你正在找插畫合作，歡迎聯繫我，我會盡快回覆。</p>
+          <a href="mailto:hello@arichen.com" class="btn btn-primary-custom">hello@arichen.com</a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="container d-flex flex-column flex-md-row justify-content-between align-items-center gap-2">
+      <p class="mb-0">© <span id="year"></span> Ari Chen. All rights reserved.</p>
+      <div class="d-flex gap-3">
+        <a href="#home" class="text-decoration-none text-light">Top</a>
+        <a href="#projects" class="text-decoration-none text-light">Works</a>
+      </div>
+    </div>
+  </footer>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="https://unpkg.com/aos@2.3.4/dist/aos.js"></script>
+  <script>
+    AOS.init({ duration: 800, once: true });
+    document.getElementById('year').textContent = new Date().getFullYear();
+  </script>
+</body>
+</html>
