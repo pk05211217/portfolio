@@ -1,0 +1,377 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>沐光咖啡廳 Muguang Cafe | 專屬你的寧靜時刻</title>
+    
+    <!-- Bootstrap 5 CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    
+    <!-- Google Fonts: Noto Serif TC (標題) & Noto Sans TC (內文) -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@300;400;500;700&family=Noto+Serif+TC:wght@400;500;600;700;900&display=swap" rel="stylesheet">
+    
+    <!-- FontAwesome Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+    <nav class="navbar navbar-expand-lg fixed-top py-3">
+        <div class="container">
+            <a class="navbar-brand" href="#">
+                <img src="imgs/logo.png" alt="沐光 Muguang" height="50">
+            </a>
+            <button class="navbar-toggler border-0" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto align-items-center">
+                    <li class="nav-item"><a class="nav-link px-3" href="#about">關於沐光</a></li>
+                    <li class="nav-item"><a class="nav-link px-3" href="#menu">好事發生</a></li>
+                    <li class="nav-item"><a class="nav-link px-3" href="#gallery">角落風景</a></li>
+                    <li class="nav-item"><a class="nav-link px-3" href="#testimonials">悄悄話</a></li>
+                    <li class="nav-item ms-lg-3 mt-3 mt-lg-0">
+                        <a href="#footer" class="btn btn-custom btn-sm py-2 px-4">預約好心情</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- 第一幕：主視覺區 -->
+    <section id="hero">
+        <!-- 裝飾背景圖形 -->
+        <div class="blob blob-1"></div>
+        <div class="dot-pattern" style="top: 20%; left: 10%;"></div>
+        <i class="fa-solid fa-leaf floating-icon" style="top: 30%; right: 15%; color: var(--color-secondary);"></i>
+        <i class="fa-solid fa-mug-hot floating-icon" style="bottom: 20%; left: 15%; font-size: 1.5rem;"></i>
+
+        <div class="container content-wrapper">
+            <div class="row align-items-center flex-column-reverse flex-lg-row">
+                <div class="col-lg-6 text-center text-lg-start mt-5 mt-lg-0 pe-lg-5">
+                    <h6 class="text-uppercase fw-bold mb-3" style="color: var(--color-secondary); letter-spacing: 3px;">Good things happen!</h6>
+                    <h1 class="mb-4">來點好心情，<br><span class="playful-title">好事會在沐光發生。</span></h1>
+                    <p class="mb-5 text-muted fs-5">在陽光灑落的角落，以一杯溫潤的手沖咖啡與精緻手作甜點，將日常的喧囂輕輕放下，享受專屬你的童趣時光。</p>
+                    <a href="#menu" class="btn btn-custom btn-lg"><i class="fa-solid fa-arrow-down me-2"></i>探索今日驚喜</a>
+                </div>
+                <div class="col-lg-6">
+                    <div class="hero-img-container">
+                        <!-- 使用咖啡拉花或甜點的溫暖情境圖 -->
+                        <img src="https://images.unsplash.com/photo-1514432324607-a09d9b4aefdd?q=80&w=800&auto=format&fit=crop" alt="Coffee and sweets" class="hero-img">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 第二幕：品牌故事與理念 -->
+    <section id="about" class="section-padding">
+        <div class="blob blob-2" style="right: -100px; left: auto; background-color: var(--color-blob-1);"></div>
+        <div class="container content-wrapper">
+            <div class="row align-items-center mb-5 pb-4">
+                <div class="col-lg-5 mb-5 mb-lg-0">
+                    <div class="about-img-box">
+                        <img src="imgs/advertise.png" alt="Pour over coffee" class="img-fluid">
+                    </div>
+                </div>
+                <div class="col-lg-6 offset-lg-1">
+                    <div class="d-inline-block px-3 py-1 rounded-pill mb-3" style="background-color: var(--color-bg-alt); color: var(--color-primary); font-size: 0.9rem; font-weight: bold;">
+                        <i class="fa-solid fa-heart me-1"></i> Our Story
+                    </div>
+                    <h2 class="mb-4 playful-title">喧囂城市裡的溫柔棲地</h2>
+                    <p class="text-muted mb-4 fs-5">
+                        「沐光」誕生於一個簡單的渴望：在繁忙的都市步調中，保留一處能讓心靈深呼吸、偶爾像個孩子般放鬆的空間。我們相信，好的食物與舒適的環境，能療癒疲憊的靈魂。
+                    </p>
+                </div>
+            </div>
+
+            <!-- 核心價值 -->
+            <div class="row text-center mt-5 g-4">
+                <div class="col-md-4">
+                    <div class="core-value">
+                        <div class="icon-box">
+                            <i class="fa-solid fa-seedling"></i>
+                        </div>
+                        <h4 class="mb-3 fw-bold">純粹好食材</h4>
+                        <p class="text-muted mb-0">與在地小農合作，堅持無添加，呈現食物自然真實的甜美，每一口都是安心。</p>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="core-value">
+                        <div class="icon-box">
+                            <i class="fa-solid fa-mug-saucer"></i>
+                        </div>
+                        <h4 class="mb-3 fw-bold">暖心手沖咖啡</h4>
+                        <p class="text-muted mb-0">由專業咖啡師精準控溫手沖，為您萃取每一杯層次豐富、充滿溫度的琥珀色驚喜。</p>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="core-value">
+                        <div class="icon-box">
+                            <i class="fa-solid fa-couch"></i>
+                        </div>
+                        <h4 class="mb-3 fw-bold">慵懶小角落</h4>
+                        <p class="text-muted mb-0">充滿自然採光與綠意植栽的呼吸感空間，提供不被打擾的悠閒，盡情放空吧！</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 第三幕：主打特色菜單 -->
+    <section id="menu" class="section-padding">
+        <!-- 點狀裝飾 -->
+        <div class="dot-pattern" style="bottom: 10%; right: 5%;"></div>
+        
+        <div class="container content-wrapper">
+            <div class="text-center mb-5 pb-4">
+                <h6 class="text-uppercase fw-bold mb-2" style="color: var(--color-primary); letter-spacing: 2px;">What's New</h6>
+                <h2 class="mb-4 playful-title">今天想來點什麼？</h2>
+                <p class="text-muted mx-auto" style="max-width: 600px;">每一份甜點與飲品，都是我們用心雕琢的小巧思，期待能在您的味蕾上綻放溫柔的驚喜。</p>
+            </div>
+
+            <div class="row row-cols-1 row-cols-md-2 row-cols-lg-4 g-4 pt-4">
+                <!-- 菜單項目 1 -->
+                <div class="col">
+                    <div class="menu-card">
+                        <div class="menu-card-inner text-center">
+                            <div class="menu-img-wrapper">
+                                <img src="imgs/product1.png" alt="特色拿鐵">
+                            </div>
+                            <h5 class="fw-bold mb-2 mt-5">沐光特調拿鐵</h5>
+                            <span class="price-tag">NT$ 160</span>
+                            <p class="text-muted small mb-0">融合衣索比亞日曬豆的微酸莓果香氣，搭配小農鮮乳的溫潤滑順。</p>
+                        </div>
+                    </div>
+                </div>
+                <!-- 菜單項目 2 -->
+                <div class="col">
+                    <div class="menu-card">
+                        <div class="menu-card-inner text-center">
+                            <div class="menu-img-wrapper">
+                                <img src="imgs/product2.png" alt="戚風蛋糕">
+                            </div>
+                            <h5 class="fw-bold mb-2 mt-5">橙花初雪戚風</h5>
+                            <span class="price-tag">NT$ 180</span>
+                            <p class="text-muted small mb-0">雲朵般輕盈的伯爵茶糕體，外層抹上帶有橙花香氣的微甜鮮奶油。</p>
+                        </div>
+                    </div>
+                </div>
+                <!-- 菜單項目 3 -->
+                <div class="col">
+                    <div class="menu-card"> <!-- 稍微錯開排列高度 -->
+                        <div class="menu-card-inner text-center">
+                            <div class="menu-img-wrapper">
+                                <img src="imgs/product3.png" alt="法式甜點">
+                            </div>
+                            <h5 class="fw-bold mb-2 mt-5">宇治金時巴斯克</h5>
+                            <span class="price-tag">NT$ 190</span>
+                            <p class="text-muted small mb-0">頂級宇治抹茶，表面微焦、內裡呈現半熟的濃郁滑順，茶香回甘。</p>
+                        </div>
+                    </div>
+                </div>
+                <!-- 菜單項目 4 -->
+                <div class="col">
+                    <div class="menu-card">
+                        <div class="menu-card-inner text-center">
+                            <div class="menu-img-wrapper">
+                                <img src="imgs/product4.png" alt="特調飲品">
+                            </div>
+                            <h5 class="fw-bold mb-2 mt-5">盛夏莓果氣泡飲</h5>
+                            <span class="price-tag">NT$ 150</span>
+                            <p class="text-muted small mb-0">有機綜合莓果手工熬製果醬，加入清爽氣泡水，沁涼解膩的選擇。</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="text-center mt-5 pt-3">
+                <a href="#" class="btn btn-outline-dark rounded-pill px-4">查看完整菜單</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- 第四幕：空間與體驗 -->
+    <section id="gallery" class="section-padding">
+        <div class="blob blob-3" style="left: -50px; right: auto; background-color: var(--color-blob-2);"></div>
+        <div class="container content-wrapper">
+            <div class="text-center mb-5">
+                <h6 class="text-uppercase fw-bold mb-2" style="color: var(--color-primary); letter-spacing: 2px;">Cozy Corners</h6>
+                <h2 class="mb-4 playful-title">尋找你的專屬角落</h2>
+                <p class="text-muted mx-auto" style="max-width: 600px;">每一個角落都有獨特的光影風景，等待您親自來發掘。</p>
+            </div>
+            
+            <div class="row g-4">
+                <div class="col-md-4">
+                    <div class="gallery-img-wrapper">
+                        <img src="imgs/bar.png" alt="窗邊採光座位" class="gallery-img">
+                    </div>
+                    <div class="gallery-img-wrapper">
+                        <img src="imgs/corner.png" alt="復古角落" class="gallery-img" style="height: 250px;">
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="gallery-img-wrapper">
+                        <img src="imgs/sample.png" alt="手沖咖啡吧台" class="gallery-img" style="height: 574px;">
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="gallery-img-wrapper">
+                        <img src="imgs/coffeewindow.png" alt="沙發區與植物" class="gallery-img" style="height: 250px;">
+                    </div>
+                    <div class="gallery-img-wrapper">
+                        <img src="imgs/coffee.png" alt="精緻桌面細節" class="gallery-img">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 第五幕：顧客評價 -->
+    <section id="testimonials" class="section-padding">
+        <div class="container content-wrapper">
+            <div class="text-center mb-5">
+                <h6 class="text-uppercase fw-bold mb-2" style="color: var(--color-primary); letter-spacing: 2px;">Guestbook</h6>
+                <h2 class="mb-4 playful-title">聽聽他們留下的悄悄話</h2>
+            </div>
+
+            <div class="row g-4">
+                <div class="col-lg-4">
+                    <div class="testimonial-card">
+                        <i class="fa-solid fa-quote-left quote-icon"></i>
+                        <p class="mb-4 text-muted">「空間真的很療癒，大面落地窗配上植栽，重點是甜點吃得出用心，橙花戚風完全不甜膩，非常適合週末跟閨蜜來喝下午茶放鬆！」</p>
+                        <div class="d-flex align-items-center mt-auto">
+                            <div class="bg-light rounded-circle d-flex align-items-center justify-content-center me-3" style="width: 45px; height: 45px; font-size: 20px; color: var(--color-primary);">
+                                <i class="fa-solid fa-face-smile"></i>
+                            </div>
+                            <div>
+                                <h6 class="mb-0 fw-bold">@iris.daily_</h6>
+                                <small class="text-muted">貪吃鬼日常</small>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="col-lg-4" style="transform: translateY(20px);"> <!-- 錯開排列 -->
+                    <div class="testimonial-card" style="box-shadow: 5px 5px 0 var(--color-blob-2);">
+                        <i class="fa-solid fa-quote-left quote-icon" style="color: var(--color-secondary);"></i>
+                        <p class="mb-4 text-muted">「店員超級親切！一個人帶筆電來工作，窗邊座位採光好棒，配上手沖咖啡，可以在這裡平靜地度過一整個下午。」</p>
+                        <div class="d-flex align-items-center mt-auto">
+                            <div class="bg-light rounded-circle d-flex align-items-center justify-content-center me-3" style="width: 45px; height: 45px; font-size: 20px; color: var(--color-secondary);">
+                                <i class="fa-solid fa-laptop-code"></i>
+                            </div>
+                            <div>
+                                <h6 class="mb-0 fw-bold">@chen_wu.design</h6>
+                                <small class="text-muted">設計工作者</small>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-lg-4">
+                    <div class="testimonial-card" style="box-shadow: 5px 5px 0 var(--color-blob-3);">
+                        <i class="fa-solid fa-quote-left quote-icon" style="color: var(--color-text-light);"></i>
+                        <p class="mb-4 text-muted">「難得市區有這麼寧靜的避風港。抹茶巴斯克的茶香與滑順口感讓人驚豔，咖啡水準也很高，是一家絕對會再回訪的愛店！」</p>
+                        <div class="d-flex align-items-center mt-auto">
+                            <div class="bg-light rounded-circle d-flex align-items-center justify-content-center me-3" style="width: 45px; height: 45px; font-size: 20px; color: var(--color-text-light);">
+                                <i class="fa-solid fa-camera-retro"></i>
+                            </div>
+                            <div>
+                                <h6 class="mb-0 fw-bold">@foodie_tw_</h6>
+                                <small class="text-muted">在地嚮導</small>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 第六幕：頁尾資訊 -->
+    <footer id="footer">
+        <!-- SVG 波浪分隔線 -->
+        <div class="footer-wave">
+            <svg data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 120" preserveAspectRatio="none">
+                <path d="M321.39,56.44c58-10.79,114.16-30.13,172-41.86,82.39-16.72,168.19-17.73,250.45-.39C823.78,31,906.67,72,985.66,92.83c70.05,18.48,146.53,26.09,214.34,3V0H0V27.35A600.21,600.21,0,0,0,321.39,56.44Z" class="shape-fill"></path>
+            </svg>
+        </div>
+
+        <div class="container mt-4">
+            <div class="row g-5">
+                <!-- 品牌與行動呼籲 -->
+                <div class="col-lg-4 pe-lg-5 text-center text-lg-start">
+                    <h3 class="serif-text fw-bold mb-4">沐光 Muguang Cafe</h3>
+                    <p class="mb-4">讓日常的步伐慢下來，留一杯咖啡的時間給自己。期待在這裡與您相遇。</p>
+                    <a href="#" class="btn btn-custom w-100 mb-4 rounded-pill">立刻預約悠閒時光</a>
+                    <div class="d-flex justify-content-center justify-content-lg-start">
+                        <a href="#" class="social-link"><i class="fa-brands fa-instagram"></i></a>
+                        <a href="#" class="social-link"><i class="fa-brands fa-facebook-f"></i></a>
+                        <a href="#" class="social-link"><i class="fa-brands fa-line"></i></a>
+                    </div>
+                </div>
+
+                <!-- 營業資訊 -->
+                <div class="col-lg-4 text-center text-lg-start">
+                    <h5 class="fw-bold"><i class="fa-solid fa-clock me-2 text-warning"></i>營業資訊</h5>
+                    <ul class="list-unstyled mt-3">
+                        <li class="mb-3">
+                            <strong class="text-white">平日：</strong> 11:00 - 19:00<br>
+                            <strong class="text-white">週末：</strong> 10:00 - 20:00<br>
+                            <span class="badge bg-light text-dark mt-2 px-3 py-2 rounded-pill">每週二公休</span>
+                        </li>
+                        <li class="mb-2">
+                            <i class="fa-solid fa-phone me-2"></i> 02-2345-6789
+                        </li>
+                        <li>
+                            <i class="fa-solid fa-location-dot me-2"></i> 台北市大安區沐光路 123 巷 45 號
+                        </li>
+                    </ul>
+                </div>
+
+                <!-- 地圖嵌入 -->
+                <div class="col-lg-4">
+                    <div class="map-container shadow-sm h-100">
+                        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d14460.672535914948!2d121.53489814674378!3d25.02835216315809!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3442a989fe322093%3A0xc66c1f017056637e!2z5aSn5a6J5qOu5p6X5YWs5ZyS!5e0!3m2!1szh-TW!2stw!4v1700000000000!5m2!1szh-TW!2stw" 
+                                width="100%" 
+                                height="100%" 
+                                style="border:0; min-height: 200px;" 
+                                allowfullscreen="" 
+                                loading="lazy" 
+                                referrerpolicy="no-referrer-when-downgrade">
+                        </iframe>
+                    </div>
+                </div>
+            </div>
+
+            <div class="row mt-5 pt-4 border-top" style="border-color: rgba(255,255,255,0.1) !important;">
+                <div class="col-12 text-center" style="font-size: 0.85rem; opacity: 0.7;">
+                    &copy; 2026 沐光咖啡廳 Muguang Cafe. All Rights Reserved.
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Bootstrap 5 JS Bundle with Popper -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+    
+    <script>
+        // 滑動時導覽列樣式變化
+        window.addEventListener('scroll', function() {
+            const navbar = document.querySelector('.navbar');
+            if (window.scrollY > 50) {
+                navbar.style.backgroundColor = 'rgba(253, 251, 247, 0.98)';
+                navbar.style.borderBottom = 'none';
+                navbar.style.boxShadow = '0 4px 20px rgba(0,0,0,0.05)';
+            } else {
+                navbar.style.backgroundColor = 'rgba(253, 251, 247, 0.9)';
+                navbar.style.borderBottom = '2px dashed rgba(212, 163, 115, 0.3)';
+                navbar.style.boxShadow = 'none';
+            }
+        });
+    </script>
+</body>
+</html>
